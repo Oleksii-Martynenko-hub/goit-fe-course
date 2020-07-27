@@ -1,0 +1,152 @@
+body {
+  background: url(../images/bg-3840.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.homeworks__title {
+  font-size: 25px;
+  color: #000;
+  margin-bottom: 12px;
+}
+.homeworks__description {
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 12px;
+}
+
+
+
+
+.homeworks { 
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+.homework__list { 
+  display: flex;
+  position: relative;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  perspective-origin: 50% 0%;
+  perspective: 2000px;
+}
+.homework__item { 
+  width: 280px;
+  margin: 0 15px 15px 0;
+  background: rgb(18, 25, 65);
+  box-shadow: 16px 20px 10px 3px rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
+  /* border-top-right-radius: 6px; */
+  border: 1px solid rgb(18, 25, 65);
+  transform: rotateX(50deg);
+  transform-origin: bottom;
+  transition: background 0.5s, transform 0.2s, z-index 0s 0.7s;
+  z-index: 1;
+}
+.homework__item:nth-child(1) {animation: pre-load ease 1s 0s 1, item-load ease 1.5s 1s 1;}
+.homework__item:nth-child(2) {animation: pre-load ease 1.1s 0s 1, item-load ease 1.5s 1.1s 1;}
+.homework__item:nth-child(3) {animation: pre-load ease 1.2s 0s 1, item-load ease 1.5s 1.2s 1;}
+.homework__item:nth-child(4) {animation: pre-load ease 1.3s 0s 1, item-load ease 1.5s 1.3s 1;}
+.homework__item:nth-child(5) {animation: pre-load ease 1.4s 0s 1, item-load ease 1.5s 1.4s 1;}
+.homework__item:nth-child(6) {animation: pre-load ease 1.5s 0s 1, item-load ease 1.5s 1.5s 1;}
+.homework__item:nth-child(7) {animation: pre-load ease 1.6s 0s 1, item-load ease 1.5s 1.6s 1;}
+.homework__item:nth-child(8) {animation: pre-load ease 1.7s 0s 1, item-load ease 1.5s 1.7s 1;}
+.homework__item:nth-child(9) {animation: pre-load ease 1.8s 0s 1, item-load ease 1.5s 1.8s 1;}
+.homework__item:nth-child(10) {animation: pre-load ease 1.9s 0s 1, item-load ease 1.5s 1.9s 1;}
+
+
+.homework__item:nth-child(1):hover {z-index: 5;}
+.homework__item:nth-child(2):hover {z-index: 5;}
+.homework__item:nth-child(3):hover {z-index: 5;}
+.homework__item:nth-child(4):hover {z-index: 5;}
+.homework__item:nth-child(5):hover {z-index: 5;}
+.homework__item:nth-child(6):hover {z-index: 5;}
+.homework__item:nth-child(7):hover {z-index: 5;}
+.homework__item:nth-child(8):hover {z-index: 5;}
+.homework__item:nth-child(9):hover {z-index: 5;}
+.homework__item:nth-child(10):hover {z-index: 5;}
+
+
+
+@media (max-width: 576px) {
+  .homework__item { 
+    margin: 0 0 15px 0;
+  }
+}
+.homework__item:not(:last-child) {
+}
+.homework-link { 
+  text-align: center;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  display: block;
+  padding: 15px;
+}
+
+.homework__item:hover { 
+  transition: background 0.5s, transform 0.2s 0.5s;
+  background: rgb(143, 159, 230);
+  transform:  rotateX(0deg);
+}
+
+
+
+
+.view-photo {
+  position: absolute;
+  top: 50px;
+  left: 6px;
+  display: block;
+  width: 266px;
+  height: 0px;
+  object-fit: cover;
+  object-position: top;
+  transition: all 0.5s 0.5s;
+  cursor: default;
+  pointer-events: none;
+  box-shadow: 16px 20px 10px 3px rgba(0, 0, 0, 0.6);
+}
+.homework__item:hover .view-photo{ 
+  box-shadow: 16px 20px 10px 3px rgba(0, 0, 0, 0.6);
+  height: 266px;
+  transition: all 0.5s;
+  transform:  rotateX(0deg);
+}
+
+
+
+
+@keyframes item-load {
+  0% {
+    transform: translateX(2000px) rotateX(0deg);
+    box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.6);
+  }
+  45% {
+    transform: translateX(0px) rotateX(0deg);
+    box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.6);
+  }
+  75% {
+    transform: translateX(0px) rotateX(0deg);
+    box-shadow: 16px 20px 10px 3px rgba(0, 0, 0, 0.6);
+  }
+  
+  100% {
+    box-shadow: 16px 20px 10px 3px rgba(0, 0, 0, 0.6);
+    transform: translateX(0px) rotateX(50deg);
+  }
+}
+@keyframes pre-load {
+  0% {
+    transform: translateX(2000px) rotateX(0deg);
+    box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.6);
+  }  
+  100% {
+    box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.6);
+    transform: translateX(2000px) rotateX(0deg);
+  }
+}
